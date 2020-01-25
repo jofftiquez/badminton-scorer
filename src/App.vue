@@ -6,10 +6,12 @@
       dark
       flat
     )
-      h1 Round {{round}}
+      h1
+        v-icon(style="font-size: 45px;").mb-1 mdi-badminton
+        span.ml-3 Round {{round}}
       v-spacer
-      v-btn(large @click="resetRound(false)").mr-2 Reset Round
-      v-btn(large @click="resetGame(false)") Reset Game
+      v-btn(@click="resetRound(false)").mr-2 Reset Round
+      v-btn(@click="resetGame(false)") Reset Game
     v-content
       v-container(fuild class="fill-height")
         v-row(
@@ -57,6 +59,17 @@
         v-card-actions
           v-btn(block large color="primary" @click="resetGame(true)").white--text Start Next Game&nbsp;
             v-icon mdi-heart
+
+    v-footer(
+      bottom
+    )
+      v-spacer
+      v-btn(
+        target="_blank"
+        href="https://github.com/jofftiquez/badminton-scorer"
+      ).black--text Made with&nbsp;
+        v-icon.red--text mdi-heart
+        | jofftiquez
 </template>
 
 <script>
