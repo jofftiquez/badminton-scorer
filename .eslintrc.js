@@ -8,6 +8,10 @@ module.exports = {
     '@vue/standard'
   ],
   rules: {
+    'semi': [2, 'always'],
+    'space-before-function-paren': [2, 'always'],
+    'keyword-spacing': [2, { before: true, after: true }],
+    'space-before-blocks': [2, 'always'],
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'
   },
@@ -25,4 +29,4 @@ module.exports = {
       }
     }
   ]
-}
+};
