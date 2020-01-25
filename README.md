@@ -1,29 +1,7 @@
-# badminton-scorer
+# Badminton Scorer App
 
-## Project setup
-```
-yarn install
-```
+## Sample 1
+![Sample 1](src/assets/sample-1.png)
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
-
-### Compiles and minifies for production
-```
-yarn build
-```
-
-### Run your unit tests
-```
-yarn test:unit
-```
-
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Sample 2
+![Sample 2](src/assets/sample-2.png)
