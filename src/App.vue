@@ -16,25 +16,27 @@
           align="center"
           justify="center"
         )
-          v-col(cols="12" sm="6" md="6").text-center
+          v-col(cols="12" sm="6" md="6")
+            h1 Player 1
             v-card(height="100%" @click="increment('player1')")
               v-card-actions
-                h2 Win Streak
+                h2.grey--text Win Streak
                 rating(
                   :win-streak="roundsScore.player1"
                 )
-              v-card-text(style="height: 400px;")
+              v-card-text(style="height: 300px;").text-center
                 h1.player-score {{scores.player1}}
               v-card-actions
                 v-btn(@click.stop="decrement('player1')" large) -1
-          v-col(cols="12" sm="6" md="6").text-center
+          v-col(cols="12" sm="6" md="6")
+            h1 Player 2
             v-card(height="100%" @click="increment('player2')")
               v-card-actions
-                h2 Win Streak
+                h2.grey--text Win Streak
                 rating(
                   :win-streak="roundsScore.player2"
                 )
-              v-card-text(style="height: 400px;")
+              v-card-text(style="height: 300px;").text-center
                 h1.player-score {{scores.player2}}
               v-card-actions
                 v-btn(@click.stop="decrement('player2')" large) -1
@@ -165,6 +167,6 @@ export default {
 <style scoped>
 .player-score {
   font-size: 250px;
-  margin-top: 150px;
+  margin-top: 130px;
 }
 </style>
