@@ -55,7 +55,7 @@
         v-card-text.pa-5.text-center
           h1.display-2 {{winner | start-case}} Win the Game!
         v-card-actions
-          v-btn(block large color="success" @click="resetGame(true)").white--text Start Next Game&nbsp;
+          v-btn(block large color="primary" @click="resetGame(true)").white--text Start Next Game&nbsp;
             v-icon mdi-heart
 </template>
 
