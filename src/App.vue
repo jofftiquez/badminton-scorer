@@ -22,7 +22,7 @@
           v-col(cols="12" sm="12" md="12")
             v-spacer
             v-btn(v-if="isFullscreen" @click="exitFullscreen")
-              v-icon mdi-fullscreen
+              v-icon mdi-fullscreen-exit
           v-col(cols="12" sm="6" md="6")
             h1 Player 1
             v-card(height="100%" @click="increment('player1')")
