@@ -10,14 +10,19 @@
         v-icon(style="font-size: 45px;").mb-1 mdi-badminton
         span.ml-3 Round {{round}}
       v-spacer
+      v-btn(@click="setFullscreen").mr-2 Fullscreen
       v-btn(@click="resetRound(false)").mr-2 Reset Round
       v-btn(@click="resetGame(false)") Reset Game
-    v-content
+    v-content#fullscreen.white
       v-container(fuild class="fill-height")
         v-row(
           align="center"
           justify="center"
         )
+          v-col(cols="12" sm="12" md="12")
+            v-spacer
+            v-btn(v-if="isFullscreen" @click="exitFullscreen")
+              v-icon mdi-fullscreen
           v-col(cols="12" sm="6" md="6")
             h1 Player 1
             v-card(height="100%" @click="increment('player1')")
@@ -76,6 +81,7 @@
 import Rating from '@/components/rating';
 import _ from 'lodash';
 const WINNING_SCORE = 21;
+
 export default {
   name: 'App',
   components: {
@@ -99,7 +105,8 @@ export default {
       roundsScore: {
         player1: 0,
         player2: 0
-      }
+      },
+      isFullscreen: false
     };
   },
   methods: {
@@ -169,6 +176,23 @@ export default {
           reset();
         };
       }
+    },
+    setFullscreen () {
+      const elem = document.getElementById('fullscreen');
+      if (elem.requestFullscreen) {
+        elem.requestFullscreen();
+      } else if (elem.mozRequestFullScreen) { /* Firefox */
+        elem.mozRequestFullScreen();
+      } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
+        elem.webkitRequestFullscreen();
+      } else if (elem.msRequestFullscreen) { /* IE/Edge */
+        elem.msRequestFullscreen();
+      }
+      this.isFullscreen = true;
+    },
+    exitFullscreen () {
+      document.exitFullscreen();
+      this.isFullscreen = false;
     }
   },
   created () {
